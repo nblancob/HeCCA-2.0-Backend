@@ -15,10 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from rest_framework import routers
 from post.api.router import router_posts
+from post.api.views import PostApiViewSet
+from post.api.views import create_df
 
+
+router = routers.DefaultRouter()
+router.register('Data',PostApiViewSet,basename='post')
+
+# Configuracion de las routras hacia donde iran las peticiones
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router_posts.urls))
+    path('post/', include(router_posts.urls)),
+    path('create/', create_df, name='create_df')
 ]
