@@ -37,6 +37,8 @@ def create_df(request):
     data_missing = {'Validez': data[0],
                     'Porcentaje': data[1],
                     'N_faltante': data[2],
-                    'Ano_util': data[3], }
+                    'Asho_inicio': data[3],
+                    'Asho_fin':data[4] }
     return JsonResponse(data_missing)
+
 

@@ -91,7 +91,7 @@ def fecha_cruda(df1):
         a = summarize_missing_values(df2)[0]
         c = summarize_missing_values(df2)[1] 
         b = prim_ult(df2)
-        data=[True,a,c,b[2]]
+        data=[True,a,c,b[0],b[1]]
         return data
     else:
         return False

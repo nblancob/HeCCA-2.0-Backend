@@ -10,4 +10,6 @@ def upload_path(instance, filename):
 class Data(models.Model):
     name = models.CharField(max_length=200, blank=False)
     area = models.IntegerField()
+    compare = models.BooelanField()
     data = models.FileField(blank=True, upload_to=upload_path)
+
